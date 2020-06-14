@@ -27,6 +27,7 @@ import java.util.Map;
 @Api(description = "讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")
+@CrossOrigin
 public class EduTeacherController {
 
     @Autowired
@@ -65,6 +66,14 @@ public class EduTeacherController {
 
         //创建page对象
         Page<EduTeacher> pageTeacher=new Page<>(current,limit);
+
+        /*try {
+            int i=10/0;
+        }catch (Exception e){
+
+            throw new GuliException(20001,"执行了自定义异常");
+        }*/
+
         teacherService.page(pageTeacher,null);
 
         long total = pageTeacher.getTotal();
