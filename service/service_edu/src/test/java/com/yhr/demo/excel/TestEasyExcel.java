@@ -9,9 +9,14 @@ public class TestEasyExcel {
 
     public static void main(String[] args) {
 
-        String fileName="E:\\guli-log\\write.xlsx";
+        //写操作
+        /*String fileName="E:\\guli-log\\write.xlsx";
 
-        EasyExcel.write(fileName,DemoData.class).sheet("学生列表").doWrite(getData());
+        EasyExcel.write(fileName,DemoData.class).sheet("学生列表").doWrite(getData());*/
+
+       //读操作
+        String fileName="E:\\guli-log\\write.xlsx";
+        EasyExcel.read(fileName,DemoData.class,new ExcelListener()).sheet().doRead();
     }
 
 

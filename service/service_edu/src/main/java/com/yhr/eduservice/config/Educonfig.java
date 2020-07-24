@@ -21,6 +21,7 @@ public class Educonfig {
     public PaginationInterceptor paginationInterceptor() {
 
         return new PaginationInterceptor();
+
     }
 
 }
