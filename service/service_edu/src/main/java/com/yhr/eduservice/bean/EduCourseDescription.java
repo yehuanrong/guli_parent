@@ -15,35 +15,29 @@ import java.util.Date;
 
 /**
  * <p>
- * 课程科目
+ * 课程简介
  * </p>
  *
  * @author testjava
- * @since 2020-06-14
+ * @since 2020-08-05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="EduSubject对象", description="课程科目")
-public class EduSubject implements Serializable {
+@ApiModel(value="EduCourseDescription对象", description="课程简介")
+public class EduCourseDescription implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "课程类别ID")
-    @TableId(value = "id", type = IdType.ID_WORKER_STR)
+    @ApiModelProperty(value = "课程ID")
+    @TableId(value = "id", type = IdType.INPUT)//INPUT表示手动添加
     private String id;
 
-    @ApiModelProperty(value = "类别名称")
-    private String title;
-
-    @ApiModelProperty(value = "父ID")
-    private String parentId;
-
-    @ApiModelProperty(value = "排序字段")
-    private Integer sort;
+    @ApiModelProperty(value = "课程简介")
+    private String description;
 
     @ApiModelProperty(value = "创建时间")
-    @TableField(fill= FieldFill.INSERT)
+    @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
 
     @ApiModelProperty(value = "更新时间")
